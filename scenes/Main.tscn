@@ -1,14 +1,43 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
+[ext_resource type="Texture2D" uid="uid://7ymcl1merajd" path="res://assets/winter-pixel-landscape-retro-2d-game-background-with-snowy-mountains-and-forest-snowy-landscape-with-frozen-lake-winter-panorama-vector.jpg" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://dvlyhuf4uyjqv" path="res://scenes/Player.tscn" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://ces52vru7500r" path="res://scenes/Ladder.tscn" id="4_rarhs"]
+[ext_resource type="PackedScene" uid="uid://dpkwosrunwhv0" path="res://scenes/Rope.tscn" id="5_vcsgt"]
 
-[node name="Root" type="Node2D" unique_id=918599496]
+[node name="Main" type="Node2D" unique_id=918599496]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=84855379]
+modulate = Color(1, 1, 1, 0.70980394)
+self_modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(576.25, 324.25)
+scale = Vector2(0.62432, 0.6576531)
+texture = ExtResource("1_0bbpv")
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
-position = Vector2(296, 324)
+position = Vector2(232, 503)
 
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
-position = Vector2(856, 324)
+position = Vector2(919, 500)
 
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
-position = Vector2(576, 394)
+position = Vector2(579, 572)
+
+[node name="Ground4" parent="." unique_id=1370367410 instance=ExtResource("1_elqb8")]
+position = Vector2(519, 225)
+
+[node name="Ladder" parent="." unique_id=1150752168 instance=ExtResource("4_rarhs")]
+position = Vector2(252, 321)
+
+[node name="Player" parent="." unique_id=1260856416 instance=ExtResource("2_rvslj")]
+position = Vector2(67, 420)
+collision_mask = 2
+
+[node name="Rope" parent="." unique_id=1268607166 instance=ExtResource("5_vcsgt")]
+position = Vector2(576, 51)
+
+[connection signal="body_entered" from="Ladder" to="Player" method="_on_ladder_body_entered"]
+[connection signal="body_exited" from="Ladder" to="Player" method="_on_ladder_body_exited"]
+[connection signal="body_entered" from="Rope" to="Player" method="_on_rope_body_entered"]
+[connection signal="body_exited" from="Rope" to="Player" method="_on_rope_body_exited"]

@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://dpkwosrunwhv0"]
+
+[ext_resource type="Texture2D" uid="uid://vowu405dvop4" path="res://assets/7773d0f9-fb77-4b92-aceb-836aba5ed03b_removalai_preview.png" id="1_1hnlw"]
+[ext_resource type="Texture2D" uid="uid://bva6rcy4dkbuy" path="res://assets/32bac707-aad8-4336-ab73-699d32e6287e_removalai_preview.png" id="1_7vgbq"]
+[ext_resource type="Texture2D" uid="uid://flp77wxyvsuo" path="res://assets/821c0253-201e-41ff-afc9-a5ecfe0d697a_removalai_preview.png" id="2_7vgbq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vgbq"]
+size = Vector2(1152, 20)
+
+[node name="Rope" type="Area2D" unique_id=1268607166]
+collision_layer = 8
+
+[node name="Left" type="Sprite2D" parent="." unique_id=1350560910]
+position = Vector2(-563, -1)
+texture = ExtResource("1_7vgbq")
+
+[node name="Mid" type="Sprite2D" parent="." unique_id=52505719]
+position = Vector2(-539, -1.25)
+scale = Vector2(1, 1.0454545)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid" unique_id=783267426]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid" unique_id=408304917]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid" unique_id=1971337125]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid" unique_id=1316149984]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid" unique_id=120145399]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid" unique_id=414157028]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=497081388]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=631764136]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1308614271]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1793455371]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=302928986]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=466280219]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=195194291]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1600298849]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=956281986]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=3736349]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=501546091]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=217276282]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=789893043]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=2021601810]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1755848426]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=664310693]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1234918433]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=428044279]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1715573501]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=15578983]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1619850475]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=2002103441]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1261425953]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=813234796]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=927935434]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=2016860560]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=205991989]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1718948793]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1380005086]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=88625850]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=588257782]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=731931487]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1795510471]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=468512451]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1586427208]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=934065717]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1240412333]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1955203770]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Mid" type="Sprite2D" parent="Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid/Mid" unique_id=1492975496]
+position = Vector2(24, 0.016303897)
+scale = Vector2(1, 1.0029645)
+texture = ExtResource("1_1hnlw")
+
+[node name="Right" type="Sprite2D" parent="." unique_id=1216865377]
+position = Vector2(563, 0)
+texture = ExtResource("2_7vgbq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1515219857]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7vgbq")
