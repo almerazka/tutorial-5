@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://0gpvup6hloje"]
+
+[ext_resource type="Texture2D" uid="uid://qq3fut0af7c" path="res://assets/waterTop_high.png" id="1_uadfo"]
+[ext_resource type="AudioStream" uid="uid://c5ai8pkdv1wsa" path="res://assets/sound/wave.ogg" id="3_tvi8d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jts"]
+size = Vector2(1150, 16)
+
+[node name="Wave" type="StaticBody2D" unique_id=430407081]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=978956779]
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=579209429]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D" unique_id=1007569080]
+position = Vector2(127, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D" unique_id=190188981]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=527590201]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=72116295]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=104942341]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=832470890]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1907388206]
+position = Vector2(128, 0)
+texture = ExtResource("1_uadfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=177020145]
+position = Vector2(509, 58)
+shape = SubResource("RectangleShape2D_r5jts")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=629265947]
+stream = ExtResource("3_tvi8d")
+volume_db = 8.0
+autoplay = true
+max_distance = 300.0
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

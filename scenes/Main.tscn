@@ -1,41 +1,94 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
-[ext_resource type="Texture2D" uid="uid://7ymcl1merajd" path="res://assets/winter-pixel-landscape-retro-2d-game-background-with-snowy-mountains-and-forest-snowy-landscape-with-frozen-lake-winter-panorama-vector.jpg" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="Texture2D" uid="uid://b837und1ub0lf" path="res://assets/snow 5.jpg" id="1_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://dvlyhuf4uyjqv" path="res://scenes/Player.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://ces52vru7500r" path="res://scenes/Ladder.tscn" id="4_rarhs"]
 [ext_resource type="PackedScene" uid="uid://dpkwosrunwhv0" path="res://scenes/Rope.tscn" id="5_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://cqfvl6uctnn6t" path="res://assets/signRight.png" id="6_c01mt"]
+[ext_resource type="Texture2D" uid="uid://cb8tdxhh7oaic" path="res://assets/signExit.png" id="7_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://ceoq0eg0ytsni" path="res://assets/signLeft.png" id="8_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://bki5w0ppfd3u6" path="res://scenes/Deer.tscn" id="9_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://bne1lr0pidvx0" path="res://scenes/Fox.tscn" id="10_lhr70"]
+[ext_resource type="AudioStream" uid="uid://djro6recnrcbi" path="res://assets/sound/snowmusic.ogg" id="11_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://0gpvup6hloje" path="res://scenes/Wave.tscn" id="12_bjd11"]
 
 [node name="Main" type="Node2D" unique_id=918599496]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=84855379]
-modulate = Color(1, 1, 1, 0.70980394)
 self_modulate = Color(1, 1, 1, 0.6862745)
-position = Vector2(576.25, 324.25)
-scale = Vector2(0.62432, 0.6576531)
-texture = ExtResource("1_0bbpv")
+position = Vector2(626, 325)
+scale = Vector2(0.65312505, 0.600926)
+texture = ExtResource("1_vcsgt")
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
-position = Vector2(232, 503)
+position = Vector2(105, 614)
+collision_layer = 1
+collision_mask = 0
 
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
-position = Vector2(919, 500)
+position = Vector2(522, 232)
 
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
-position = Vector2(579, 572)
+position = Vector2(414, 547)
 
 [node name="Ground4" parent="." unique_id=1370367410 instance=ExtResource("1_elqb8")]
-position = Vector2(519, 225)
+position = Vector2(172, 355.99997)
+
+[node name="Ground5" parent="." unique_id=1002303444 instance=ExtResource("1_elqb8")]
+position = Vector2(731, 232)
+
+[node name="Ground6" parent="." unique_id=955142738 instance=ExtResource("1_elqb8")]
+position = Vector2(941, 486.99997)
+
+[node name="Ground7" parent="." unique_id=7946031 instance=ExtResource("1_elqb8")]
+position = Vector2(1150, 487)
 
 [node name="Ladder" parent="." unique_id=1150752168 instance=ExtResource("4_rarhs")]
-position = Vector2(252, 321)
-
-[node name="Player" parent="." unique_id=1260856416 instance=ExtResource("2_rvslj")]
-position = Vector2(67, 420)
+position = Vector2(901, 327)
+collision_layer = 16
 collision_mask = 2
 
+[node name="Player" parent="." unique_id=1260856416 groups=["player"] instance=ExtResource("2_rvslj")]
+position = Vector2(40, 529)
+collision_layer = 2
+collision_mask = 29
+
 [node name="Rope" parent="." unique_id=1268607166 instance=ExtResource("5_vcsgt")]
-position = Vector2(576, 51)
+position = Vector2(576, 24)
+collision_mask = 2
+
+[node name="SignRight" type="Sprite2D" parent="." unique_id=1144738291]
+position = Vector2(121.00001, 293)
+scale = Vector2(0.58984375, 0.53515613)
+texture = ExtResource("6_c01mt")
+
+[node name="SignExit" type="Sprite2D" parent="." unique_id=1753722080]
+position = Vector2(1116, 419)
+scale = Vector2(0.6289063, 0.5820314)
+texture = ExtResource("7_nxtc6")
+
+[node name="SignLeft" type="Sprite2D" parent="." unique_id=1054441956]
+position = Vector2(485.99997, 484)
+scale = Vector2(0.58984333, 0.48046884)
+texture = ExtResource("8_jlsqs")
+
+[node name="Fox" parent="." unique_id=501355454 instance=ExtResource("10_lhr70")]
+position = Vector2(1015.00006, 429)
+
+[node name="Deer" parent="." unique_id=643739484 instance=ExtResource("9_q8u5g")]
+position = Vector2(517, 166)
+collision_mask = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1237431292]
+stream = ExtResource("11_wp0k4")
+volume_db = 1.0
+autoplay = true
+attenuation = 3.0
+
+[node name="Wave" parent="." unique_id=2127929335 instance=ExtResource("12_bjd11")]
+position = Vector2(275, 666)
+script = null
 
 [connection signal="body_entered" from="Ladder" to="Player" method="_on_ladder_body_entered"]
 [connection signal="body_exited" from="Ladder" to="Player" method="_on_ladder_body_exited"]

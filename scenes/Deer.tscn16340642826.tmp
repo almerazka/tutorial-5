@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bki5w0ppfd3u6"]
+
+[ext_resource type="Script" uid="uid://kbdyhte1doa0" path="res://scenes/Deer.gd" id="1_71e37"]
+[ext_resource type="Texture2D" uid="uid://cmojaisrxtmn6" path="res://assets/craftpix/PNG/Without_shadow/Deer/Deer_Idle.png" id="1_i3h01"]
+[ext_resource type="Texture2D" uid="uid://bgeodq4osh4wc" path="res://assets/craftpix/PNG/Without_shadow/Deer/Deer_Walk.png" id="2_71e37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37aqi"]
+atlas = ExtResource("1_i3h01")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdanw"]
+atlas = ExtResource("2_71e37")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgwdw"]
+atlas = ExtResource("2_71e37")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfoyv"]
+atlas = ExtResource("2_71e37")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3vvj"]
+atlas = ExtResource("2_71e37")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkvsx"]
+atlas = ExtResource("2_71e37")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8ijb"]
+atlas = ExtResource("2_71e37")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_el3jm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37aqi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdanw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgwdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfoyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3vvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkvsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8ijb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5tj"]
+size = Vector2(29.5, 25.166668)
+
+[node name="Deer" type="CharacterBody2D" unique_id=643739484]
+scale = Vector2(3, 3)
+script = ExtResource("1_71e37")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2104805588]
+texture_filter = 5
+sprite_frames = SubResource("SpriteFrames_el3jm")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.86440134
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1836329043]
+position = Vector2(0.7500005, -0.25)
+shape = SubResource("RectangleShape2D_7p5tj")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=250019631]
+position = Vector2(8.666667, 11.333334)
+target_position = Vector2(0, 15)

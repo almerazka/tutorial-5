@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
 # BASIC MOVEMENT
-@export var gravity = 400.0
-@export var walk_speed = 200
-@export var jump_speed = -350
-@export var max_jumps = 2
+@export var gravity: float = 400.0
+@export var walk_speed: float = 200.0
+@export var jump_speed: float = -350.0
+@export var max_jumps: int = 2
 
 # DASH
-@export var dash_speed = 800
-@export var dash_duration = 0.2
-@export var double_tap_time = 0.3
+@export var dash_speed: float = 800.0
+@export var dash_duration: float = 0.2
+@export var double_tap_time: float = 0.3
 
 # CROUCH
-@export var crouch_speed = 100
+@export var crouch_speed: float = 100.0
 
 var jump_count = 0
 
@@ -30,11 +30,23 @@ var is_near_ladder = false
 var is_on_rope = false
 var is_near_rope = false
 
+var is_punching = false
+var facing_left = false
 
 func _physics_process(delta):
+
+	position = position.round()
+
 	# RESTART
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().reload_current_scene()
+
+	# PUNCH
+	if Input.is_action_just_pressed("punch") and not is_punching:
+		is_punching = true
+		$SoundPunch.play()
+		$AnimatedSprite2D.play("Punch")
+		check_punch_hit()
 
 	# ROPE
 	if is_near_rope and not is_on_rope and not is_on_floor():
@@ -68,7 +80,6 @@ func _physics_process(delta):
 			is_on_ladder = true
 
 	if is_on_ladder:
-		print("ON LADDER, velocity:", velocity, "on_floor:", is_on_floor())
 		velocity = Vector2.ZERO
 
 		if Input.is_action_pressed("ui_up"):
@@ -78,18 +89,17 @@ func _physics_process(delta):
 
 		move_and_slide()
 
-		if (
-			is_on_floor()
-			and not Input.is_action_pressed("ui_up")
-			and not Input.is_action_pressed("ui_down")
-		):
+		if is_on_floor() and not Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down"):
 			is_on_ladder = false
 
 		update_animation()
 		return
 
 	# CROUCH
+	var was_crouching = is_crouching
 	is_crouching = Input.is_action_pressed("ui_down") and is_on_floor()
+	if is_crouching and not was_crouching:
+		$SoundCrouch.play()
 
 	# GRAVITY
 	if not is_on_floor():
@@ -101,6 +111,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and not is_crouching:
 		velocity.y = jump_speed
 		jump_count += 1
+		$SoundJump.play()
+		if jump_count == 2:
+			await get_tree().create_timer(0.1).timeout
+			$SoundJump.play()
 
 	# DASH
 	if is_dashing:
@@ -117,8 +131,22 @@ func _physics_process(delta):
 
 	var screen_width = get_viewport_rect().size.x
 	position.x = clamp(position.x, 0, screen_width)
+
 	move_and_slide()
 
+# PUNCH HIT CHECK
+func check_punch_hit():
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
+	for body in get_tree().get_nodes_in_group("deer"):
+		if global_position.distance_to(body.global_position) < 100:
+			body.queue_free()
+			$DeerGone.play()
+
+	for body in get_tree().get_nodes_in_group("fox"):
+		if global_position.distance_to(body.global_position) < 100:
+			body.hurt()
 
 # NORMAL MOVEMENT
 func handle_movement():
@@ -129,11 +157,12 @@ func handle_movement():
 
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -current_speed
+		facing_left = true
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x = current_speed
+		facing_left = false
 	else:
 		velocity.x = 0
-
 
 # DASH INPUT
 func handle_dash_input():
@@ -149,7 +178,6 @@ func handle_dash_input():
 			start_dash(1)
 		last_right_tap = current_time
 
-
 func start_dash(direction):
 	if is_crouching:
 		return
@@ -157,25 +185,41 @@ func start_dash(direction):
 	is_dashing = true
 	dash_timer = dash_duration
 	dash_direction = direction
-
+	$SoundDash.play()
 
 # ANIMATION
 func update_animation():
-	# Flip kiri kanan
-	if velocity.x != 0:
-		$AnimatedSprite2D.flip_h = velocity.x < 0
 
-	if is_on_rope:
-		play_anim("Hang")
+	# Punch
+	if is_punching:
 		return
 
-	# Climb
+	# Flip kiri kanan
+	if velocity.x != 0:
+		facing_left = velocity.x < 0
+		$AnimatedSprite2D.flip_h = facing_left
+
+	# Rope
+	if is_on_rope:
+		play_anim("Hang")
+		if not $SoundHang.playing:
+			$SoundHang.play()
+		return
+
+	# Ladder
 	if is_on_ladder:
 		if velocity.y != 0:
 			play_anim("Climb")
+			if not $SoundClimb.playing:
+				$SoundClimb.play()
+		else:
+			$SoundClimb.stop()
 		return
 
-	# Dash / Slide
+	$SoundClimb.stop()
+	$SoundHang.stop()
+
+	# Dash
 	if is_dashing:
 		play_anim("Slide")
 		return
@@ -185,7 +229,7 @@ func update_animation():
 		play_anim("Crouch")
 		return
 
-	# Di udara
+	# Air
 	if not is_on_floor():
 		if velocity.y < 0:
 			play_anim("Jump")
@@ -193,41 +237,42 @@ func update_animation():
 			play_anim("Fall")
 		return
 
-	# Di tanah
+	# Ground
 	if abs(velocity.x) > 150:
 		play_anim("Run")
+		if not $SoundWalk.playing:
+			$SoundWalk.play()
 	elif abs(velocity.x) > 0:
 		play_anim("Walk")
+		if not $SoundWalk.playing:
+			$SoundWalk.play()
 	else:
 		play_anim("Idle")
+		$SoundWalk.stop()
 
-
-# PLAY FUNCTION
 func play_anim(name):
 	if $AnimatedSprite2D.animation != name:
 		$AnimatedSprite2D.play(name)
 
-
-# LADDER SIGNAL
+# SIGNALS
 func _on_ladder_body_entered(body):
-	print("ENTER:", body.name)
 	if body == self:
 		is_near_ladder = true
 
-
 func _on_ladder_body_exited(body):
-	print("EXIT:", body.name)
 	if body == self:
 		is_near_ladder = false
 		is_on_ladder = false
-
 
 func _on_rope_body_entered(body):
 	if body == self:
 		is_near_rope = true
 
-
 func _on_rope_body_exited(body):
 	if body == self:
 		is_near_rope = false
 		is_on_rope = false
+
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == "Punch":
+		is_punching = false
